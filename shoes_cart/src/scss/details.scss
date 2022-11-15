@@ -1,0 +1,248 @@
+// Base
+@import '../scss/_base.scss';
+
+// Header and Footer Style
+@import '../scss/header.scss';
+@import '../scss/footer.scss';
+
+@mixin fontMain {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+@mixin fontAdjust ($weight, $size, $height) {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;
+}
+
+@mixin inlineBlocks() {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin handleURL() {
+    a {
+        text-decoration: none !important;
+        color: #F6F6F6;
+        border: 1px solid #000000;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        width: 90px;
+        height: 32px;
+        top: 15px;
+    }
+}
+
+@mixin leftRightTopBottom($left, $right, $top, $bottom) {
+    left: $left;
+    right: $right;
+    top: $top;
+    bottom: $bottom;
+}
+
+// Main Style
+.main-product-detail {
+    max-width: 1280px;
+    margin: 168px auto 50px auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    .container-detail {
+        width: 100%;
+        margin-left: 65px;
+
+        .row {
+            .image-container {
+                width: 334px !important;
+                height: 355px !important;
+                left: 65px;
+                top: 58px;
+                background: #F8F8F8;
+
+                .shoes-image {
+                    // width: 220px;
+                    // height: 156px;
+                    margin-left: -100px;
+                    margin-top: -45px;
+                    scale: 0.6;
+                }
+            }
+
+            .product-information {
+                margin-left: 127px;
+
+                .product-information-container {
+                    .product-name {
+                        @include fontAdjust(300, 30px, 36px);
+                        color: #000;
+                    }
+
+                    p {
+                        width: 503px;
+                        height: 40px;
+                        @include fontAdjust(400, 16px, 19px);
+                        color: #140101;
+                        margin-top: 10px;
+                    }
+
+                    .product-size {
+                        span {
+                            @include fontAdjust(500, 24px, 29px);
+                            color: #1ED90E;
+                            margin-top: 5px;
+                        }
+
+                        .size-list {
+
+                            .button-size {
+                                width: 50px;
+                                height: 50px;
+                                margin-top: 10px;
+                                background: #CCCCCC;
+                                border: transparent;
+                                @include fontAdjust(600, 24px, 29px);
+                                color: #1E1D1D;
+                            }
+                        }
+                    }
+
+                    .product-price {
+                        @include fontAdjust(600, 30px, 36px);
+                        color: #FC0303;
+                        margin-top: 17px;
+                    }
+
+                    .product-count {
+
+                        .quantity-product {
+                            .count-button {
+                                width: 50px;
+                                height: 50px;
+                                background: linear-gradient(180deg, #6181F3 0%, #7C97F5 99.48%);
+                                border-radius: 3px;
+                                border: transparent;
+                                margin-top: 6px;
+                            }
+
+                            .input-quantity {
+                                width: 50px;
+                                height: 50px;
+                                border: transparent;
+                                text-align: center;
+                            }
+
+                        }
+
+                        .button-to-cart {
+                            width: 175px;
+                            height: 64px;
+                            background: linear-gradient(270deg, rgba(62, 32, 248, 0.9) 5.14%, #D017EE 89.71%);
+                            margin-top: 7px;
+                            border-radius: 3px;
+                            border: transparent;
+
+                            a {
+                                text-decoration: none;
+                                @include fontAdjust(500, 24px, 29px);
+                                color: #FFF8F8;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main_products {
+    max-width: 1280px;
+    margin: 50px auto 50px auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container_products {
+        width: 100%;
+
+        .products_title {
+            text-align: center;
+            @include leftRightTopBottom(476px, 351px, 16px, 0px);
+            @include fontAdjust(400, 40px, 48px);
+            color: #000;
+        }
+
+        .row {
+            .col {
+                .card {
+                    width: 369;
+                    height: 334;
+                    background: #F8F8F8;
+
+                    img {
+                        scale: 0.8;
+                    }
+
+                    .card-body {
+                        .card-title {
+                            @include leftRightTopBottom(23px, 126px, 153px, 8px);
+                            @include fontAdjust(300, 24px, 29px);
+                            color: #000;
+                        }
+
+                        .card-text {
+                            @include leftRightTopBottom(23px, 158px, 268px, 13px);
+                            @include fontAdjust(300, 20px, 24px);
+                            color: #CBC9C9;
+                        }
+                    }
+
+
+                    .card-footer {
+                        width: 369;
+                        padding-top: 0 !important;
+                        margin-top: 0 !important;
+                        border-top: transparent;
+                        background-color: #F8F8F8;
+                        display: flex;
+
+                        .button-buy-now {
+                            width: 50%;
+                            height: 64px;
+                            background: #E1B067;
+                            border-color: transparent;
+
+                            a {
+                                text-decoration: none !important;
+                                @include fontAdjust(200px, 24px, 29px);
+                                color: #000;
+                            }
+
+                        }
+
+                        .tag-price {
+                            width: 50%;
+                            height: 64px;
+                            background: #DEDDDC;
+                            @include fontAdjust(600, 24px, 29px);
+                            text-align: center;
+                            color: #000;
+                            border-color: transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Main Style End
